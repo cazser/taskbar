@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    box-sizing: boder-box;
+}
+
+.content {
+    height: 100vh;
+    position: relative;
+}
+
+.taskbar {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    border: 1px solid blue;
+    background-color: #2c2412;
+    width: 100%;
+    display: flex;
+    color: white;
+    height: 42px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskbar>.leftcontent {
+    margin-left: 16px;
+}
+
+.taskbar>.leftcontent>img {
+    max-height: 28px;
+    margin: 2px;
+}
+
+.taskbar>.rightcontent {
+    margin-right: 24px;
+    display: flex;
+    position: relative;
+}
+
+.taskbar>.rightcontent>.timewrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.taskbar>.rightcontent>.timewrapper span {
+    font-size: 2px;
+}
+
+.taskbar>.rightcontent>.calender {
+    position: absolute;
+    color: black;
+    left: 100%;
+    bottom: 100%;
+    border: 1px solid red;
+    z-index: 1;
+}
