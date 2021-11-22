@@ -59,5 +59,7 @@
     left: 100%;
     bottom: 100%;
     border: 1px solid red;
+    transform: translateX(-100%);
     z-index: 1;
+    min-width: 320px;
 }
