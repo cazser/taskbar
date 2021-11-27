@@ -10,6 +10,9 @@ const showtime = () => {
     <span>${hour}:${minute>=10? minute: "0"+minute.toString()}</span>
     <span>${year}/${month}/${day}</span>
     `
+    const calenderMonth = document.querySelector("#calender-month")
+
+    calenderMonth.innerHTML = `${year}年${month}月`
 
 
 
