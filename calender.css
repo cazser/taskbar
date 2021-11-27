@@ -27,6 +27,7 @@
 
 .calender-header>.calender-buttons>.calender-nextMonth {
     transform: rotate(180deg);
+    margin-top: -10px;
 }
 
 .calender-header>time {}
