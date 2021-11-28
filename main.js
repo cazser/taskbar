@@ -1,15 +1,8 @@
 const showtime = (date) => {
-    const timewrapper = document.querySelector('.timewrapper')
-    const hour = date.getHours();
-    const minute = date.getMinutes();
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const weekday = date.getDay();
-    timewrapper.innerHTML = `
-    <span>${hour}:${minute>=10? minute: "0"+minute.toString()}</span>
-    <span>${year}/${month}/${day}</span>
-    `
     const weekref = "日一二三四五六"
     const calenderMonth = document.querySelector("#calender-month")
 
@@ -26,7 +19,6 @@ const showtime = (date) => {
 
 
     let curDate = firstDayOfThisMonth;
-    console.log(curDate.getDay());
     while (curDate.getDay() !== 1) {
 
         curDate = new Date(curDate.getTime() - 24 * 3600 * 1000);
@@ -53,8 +45,27 @@ const showtime = (date) => {
     }
 }
 
+
+const showClockTime = (date) => {
+    const timewrapper = document.querySelector('.timewrapper')
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const weekday = date.getDay();
+    timewrapper.innerHTML = `
+    <span>${hour}:${minute>=10? minute: "0"+minute.toString()}</span>
+    <span>${year}/${month}/${day}</span>
+    `
+
+}
 const timewrapper = document.querySelector('.timewrapper')
 timewrapper.addEventListener('click', () => {
-    const calender = document.querySelector("calender")
-
+    const calender = document.querySelector(".calender")
+    if (calender.classList.contains("hide")) {
+        calender.classList.remove('hide')
+    } else {
+        calender.classList.add('hide')
+    }
 })

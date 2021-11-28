@@ -67,3 +67,7 @@ ol {
 .taskbar>.rightcontent>.timewrapper span {
     font-size: 2px;
 }
+
+.hide {
+    display: none;
+}
