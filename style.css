@@ -33,7 +33,6 @@ ol {
     position: absolute;
     top: 100%;
     transform: translateY(-100%);
-    border: 1px solid blue;
     background-color: #2c2412;
     width: 100%;
     display: flex;

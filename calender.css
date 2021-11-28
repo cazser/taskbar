@@ -25,6 +25,10 @@
     color: grey;
 }
 
+.calender-header>.calender-buttons>button:hover {
+    border: 1px solid black;
+}
+
 .calender-header>.calender-buttons>.calender-nextMonth {
     transform: rotate(90deg);
     margin-left: 3px;
