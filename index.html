@@ -77,8 +77,24 @@
 <script>
     showtime(new Date());
     showClockTime(new Date());
+    const current = new Date();
+    let year = current.getFullYear();
+    let month = current.getMonth();
+    let day = current.getDate();
+    const lastMonth = document.querySelector(".calender-lastMonth");
+    const nextMonth = document.querySelector(".calender-nextMonth");
+    lastMonth.addEventListener("click", () => {
+        month--;
+        showtime(new Date(year, month, day))
+
+    })
+    nextMonth.addEventListener('click', () => {
+        month++;
+        showtime(new Date(year, month, day))
+
+    })
     setInterval(() => {
-        showtime(new Date())
+        showtime(new Date(year, month, day))
         showClockTime(new Date());
     }, 3000)
 </script>
