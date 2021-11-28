@@ -16,8 +16,41 @@ const showtime = (date) => {
     calenderMonth.innerHTML = `${year}年${month}月`
     const today = document.querySelector(".calender-today");
     today.innerHTML = `${month}月${day}日,星期${weekref[weekday]}`
-    console.log(weekday)
+    const days = document.querySelector(".calender-days")
+    days.innerHTML = ''
+    const firstDayOfThisMonth = new Date(year, month - 1, 1);
+    //    console.log(firstDayOfThisMonth.getDay());
+    const nextMonth = new Date(year, month + 1 - 1, 1);
+    //   console.log(nextMonth.getDay())
+    const dates = []
 
+
+    let curDate = firstDayOfThisMonth;
+    console.log(curDate.getDay());
+    while (curDate.getDay() !== 1) {
+
+        curDate = new Date(curDate.getTime() - 24 * 3600 * 1000);
+        dates.unshift(curDate)
+    }
+
+    curDate = firstDayOfThisMonth;
+
+    while (curDate.getTime() !== nextMonth.getTime()) {
+        dates.push(curDate);
+        curDate = new Date(curDate.getTime() + 24 * 3600 * 1000)
+    }
+    curDate = nextMonth;
+    while (curDate.getDay() !== 0) {
+        dates.push(curDate);
+        curDate = new Date(curDate.getTime() + 24 * 3600 * 1000);
+    }
+
+    dates.push(curDate);
+    for (let i = 0; i < dates.length; i++) {
+        const li = document.createElement("li")
+        li.textContent = dates[i].getDate();
+        days.append(li)
+    }
 }
 
 const timewrapper = document.querySelector('.timewrapper')

@@ -39,6 +39,7 @@
 
 .calender-weekdays {
     display: flex;
+    padding-bottom: 4px;
 }
 
 .calender-weekdays>li {
@@ -49,6 +50,8 @@
 .calender-days {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
+    font-size: 16px;
 }
 
 .calender-days>li {
