@@ -35,9 +35,22 @@ const showtime = (date) => {
     }
 
     dates.push(curDate);
+
     for (let i = 0; i < dates.length; i++) {
         const li = document.createElement("li")
+
         li.textContent = dates[i].getDate();
+        const now = new Date();
+        if (dates[i].getFullYear() === now.getFullYear() &&
+            dates[i].getMonth() === now.getMonth() &&
+            dates[i].getDate() === now.getDate()) {
+            li.classList.add('today');
+        } else if (dates[i].getFullYear() === date.getFullYear() &&
+            dates[i].getMonth() === date.getMonth()) {
+            li.classList.add('thisMonth');
+        } else {
+            li.classList.add("normal")
+        }
         days.append(li)
     }
 }

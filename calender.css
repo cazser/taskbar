@@ -63,3 +63,12 @@
     text-align: center;
     height: 42px;
 }
+
+.today {
+    border-radius: 50%;
+    background: blue;
+}
+
+.normal {
+    color: grey;
+}
