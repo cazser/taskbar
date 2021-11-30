@@ -29,10 +29,10 @@ const showtime = (date) => {
         curDate = new Date(curDate.getTime() + 24 * 3600 * 1000)
     }
     curDate = nextMonth;
-    while (curDate.getDay() !== 0) {
+    do {
         dates.push(curDate);
         curDate = new Date(curDate.getTime() + 24 * 3600 * 1000);
-    }
+    } while (dates.length < 41)
 
     dates.push(curDate);
 

@@ -8,6 +8,7 @@
     background: #333;
     min-width: 320px;
     padding: 16px;
+    margin-bottom: 4px;
 }
 
 .calender-header {
@@ -23,10 +24,6 @@
     border: none;
     text-align: center;
     color: grey;
-}
-
-.calender-header>.calender-buttons>button:hover {
-    border: 1px solid black;
 }
 
 .calender-header>.calender-buttons>.calender-nextMonth {
